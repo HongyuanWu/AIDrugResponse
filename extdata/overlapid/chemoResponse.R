@@ -56,12 +56,6 @@ mRnaid<-read.table("gdc_manifest.2019-09-11_mRNA.barcode.txt",sep="\t",head=T)
 F3<-id2phen4(mRnaid$cases.0.samples.0.submitter_id)[id2phen4(mRnaid$cases.0.samples.0.submitter_id) %in% F2]
 length(F3)
 
-
-
 RLT<-rlt[match(id2phen3(F3),rlt[,1]),]
-      
 write.table(RLT,file="id.txt",sep="\t",col.names = T,row.names = F,quote = F)
-
-
-
 
