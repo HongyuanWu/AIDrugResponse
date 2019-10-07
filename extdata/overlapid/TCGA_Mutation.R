@@ -1,3 +1,5 @@
+# BIRC10-LC
+
 BiocManager::install("TCGAbiolinks")
 BiocManager::install("DT")
 
@@ -5,6 +7,8 @@ library("TCGAbiolinks")
 library("DT")
 library("maftools")
 library("dplyr")
+
+cd ~/hpc/project/TCGA/mutation
 
 pid<-TCGAbiolinks:::getGDCprojects()$project_id
 pid<-pid[grep("TCGA",pid)]
@@ -16,6 +20,10 @@ newdata<-data.frame(query$Tumor_Sample_Barcode,query$Hugo_Symbol,query$Variant_C
 head(newdata)
 write.table(newdata,file=paste("TCGA-mutation.",i,".txt",sep=""),col.names = T,row.names = F,quote=F,sep="\t")
 }
+                   
+                   
+                   
+                   
 
 file<-list.files(pattern="TCGA*")
 ID<-c()
@@ -52,8 +60,7 @@ oncoplot(maf = maf, top = 10, removeNonMutated = TRUE)
 titv = titv(maf = maf, plot = FALSE, useSyn = TRUE)
 plotTiTv(res = titv)
 
-
-
+#####################################
 source("GscTools.R")
 id1187<-read.table("https://raw.githubusercontent.com/Shicheng-Guo/AIDrugResponse/master/extdata/overlapid/id.1187.txt",head=T,sep="\t")
 image<-read.table("gdc_manifest.2019-09-12_image.txt",head=T)
