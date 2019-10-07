@@ -20,11 +20,8 @@ newdata<-data.frame(query$Tumor_Sample_Barcode,query$Hugo_Symbol,query$Variant_C
 head(newdata)
 write.table(newdata,file=paste("TCGA-mutation.",i,".txt",sep=""),col.names = T,row.names = F,quote=F,sep="\t")
 }
-                   
-                   
-                   
-                   
-
+               
+#####################################
 file<-list.files(pattern="TCGA*")
 ID<-c()
 for(i in file){
