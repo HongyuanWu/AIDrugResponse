@@ -1,4 +1,4 @@
 ```
 cd /gpfs/home/guosa/hpc/project/TCGA/mutation
-perl maf2matrix.pl
+perl [maf2matrix.pl]()
 ```
